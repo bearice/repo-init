@@ -1,0 +1,1 @@
+a simple script to setup repo secrets in batch
