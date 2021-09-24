@@ -30,7 +30,7 @@ async function main() {
 
     for (let secret_name in secret.secrets) {
         console.info("put secret: %s", secret_name);
-        let encrypted_value = encryptSecret(secrets[secret_name]);
+        let encrypted_value = encryptSecret(secret.secrets[secret_name]);
         await octokit.request('PUT /repos/{owner}/{repo}/actions/secrets/{secret_name}', { owner, repo, secret_name, encrypted_value, key_id })
     }
 }
